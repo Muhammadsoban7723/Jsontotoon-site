@@ -1,0 +1,76 @@
+I want you to create a complete professional website in Next.js called "JSON TO TOON". 
+The main purpose of this website is to allow users to input a JSON file and convert it into a Toon format. 
+The website must have a fully working JSON-to-Toon converter tool that functions correctly on client-side.
+
+Requirements:
+
+1. Framework:
+   - Next.js (latest version) with App Router
+   - Tailwind CSS for styling
+   - Clean functional component structure
+
+2. Pages:
+   - Homepage
+   - Tool Page (JSON to Toon converter)
+   - How It Works
+   - About
+   - Contact
+   - Privacy Policy
+   - Terms & Conditions
+   - FAQ
+   - Optional Token Counter Page integrated with tool
+
+3. Header & Footer:
+   - Sticky header with navigation links
+   - Footer links all pages
+   - Fully responsive for mobile and desktop
+
+4. Tool Functionality:
+   - Input box where users can paste JSON or upload JSON file
+   - Convert button to generate Toon output
+   - Output preview section
+   - Copy button to copy Toon result
+   - Clear button
+   - Optional token usage counter
+   - Error handling for invalid JSON
+   - Fast client-side processing
+
+5. Design:
+   - Clean, modern UI
+   - Light theme
+   - Curved boxes
+   - Proper spacing, icons, and typography
+   - Fully responsive
+   - Style similar to jsontotoon.com without copying exact content
+
+6. Content:
+   - Unique content specifically written for JSON TO TOON
+   - Clear explanation of tool purpose and usage
+   - Professional but simple English
+   - Avoid plagiarism
+
+7. Technical:
+   - Functional React components
+   - Optional TypeScript
+   - Folder structure:
+     /app
+       /components
+       /styles
+       /utils
+       /api
+   - Add SEO metadata and OpenGraph tags
+   - JSON-to-Toon conversion runs on client-side for fast results
+
+8. Deployment:
+   - Must run perfectly on Replit
+   - Include package.json and replit.nix
+   - Include README instructions
+
+Deliverables:
+- Fully working Next.js website
+- All pages included
+- JSON-to-Toon tool working perfectly
+- Token counter if applicable
+- Fully responsive, modern design
+- Unique content specific to JSON TO TOON
+- Ready to deploy on Replit
