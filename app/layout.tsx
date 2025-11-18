@@ -8,9 +8,13 @@ import Footer from '@/components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.jsontotoon.site'),
   title: 'JSON TO TOON - Reduce LLM Token Usage by 30-60%',
   description: 'Free online JSON to TOON converter. Transform JSON to Token-Oriented Object Notation (TOON) format and cut LLM API costs by 30-60%. Client-side processing, no signup required.',
   keywords: 'JSON to TOON, TOON format, token reduction, LLM optimization, GPT token savings, Claude API costs',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: 'JSON TO TOON - Reduce LLM Token Usage by 30-60%',
     description: 'Free JSON to TOON converter. Cut LLM token costs by up to 60% instantly.',

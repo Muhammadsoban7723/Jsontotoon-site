@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: 'JSON to TOON Converter – Free Tool to Minify JSON for LLMs',
   description:
     'Convert JSON into TOON format to reduce LLM token usage. A fast, free and simple JSON to TOON converter for lighter prompts, cheaper API calls, and optimized model input.',
+  alternates: {
+    canonical: '/',
+  },
 }
 
 export default function Home() {

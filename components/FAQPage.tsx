@@ -8,16 +8,16 @@ const faqs = [
     category: 'General Questions',
     questions: [
       {
-        q: 'What is DataCompress Pro?',
-        a: 'DataCompress Pro is a free, browser-based tool that compresses JSON and structured data by 40-60%. It helps developers reduce file sizes, optimize API responses, and save bandwidth without requiring signup or installation.',
+        q: 'What is JSON TO TOON Converter?',
+        a: 'JSON TO TOON Converter is a free, browser-based tool that compresses JSON and structured data by 40-60%. It helps developers reduce file sizes, optimize API responses, and save bandwidth without requiring signup or installation.',
       },
       {
-        q: 'Is DataCompress Pro really free?',
+        q: 'Is JSON TO TOON Converter really free?',
         a: 'Yes, completely free with no catch. There are no subscription fees, usage limits, ads, or hidden costs. Core compression functionality will always remain free forever.',
       },
       {
         q: 'Do I need to create an account?',
-        a: 'No! You can use DataCompress Pro completely anonymously. Just visit the website, paste your data, and compress. No email, password, or account required.',
+        a: 'No! You can use JSON TO TOON Converter completely anonymously. Just visit the website, paste your data, and compress. No email, password, or account required.',
       },
     ],
   },
@@ -81,7 +81,7 @@ const faqs = [
       },
       {
         q: 'What browsers are supported?',
-        a: 'DataCompress Pro works on all modern browsers including Chrome, Firefox, Safari, Edge, and mobile browsers on iOS and Android.',
+        a: 'JSON TO TOON Converter works on all modern browsers including Chrome, Firefox, Safari, Edge, and mobile browsers on iOS and Android.',
       },
       {
         q: 'Can I integrate this into my application?',
@@ -125,7 +125,7 @@ export default function FAQPage() {
             Frequently Asked Questions
           </h1>
           <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto">
-            Find answers to common questions about DataCompress Pro and data compression
+            Find answers to common questions about JSON TO TOON Converter and data compression
           </p>
         </div>
       </section>

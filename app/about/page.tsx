@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'About Us – JSON to TOON Converter for Efficient LLM Usage',
   description:
     'Learn how our JSON to TOON converter helps reduce LLM token usage by compressing and optimizing JSON structures. Built for developers who want faster, cheaper model outputs.',
+  alternates: {
+    canonical: '/about',
+  },
 }
 
 export default function About() {
@@ -13,7 +16,7 @@ export default function About() {
       <section className="bg-gradient-to-b from-primary-50 to-white py-16">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-center">
-            About DataCompress Pro
+            About JSON TO TOON Converter
           </h1>
           <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto">
             Making data optimization accessible for everyone — one compression at a time
@@ -26,7 +29,7 @@ export default function About() {
           <div className="prose prose-lg max-w-none">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
             <p className="text-gray-600 mb-6 text-lg">
-              We built DataCompress Pro to solve a simple but important problem: <strong>data files are often larger than they need to be</strong>.
+              We built JSON TO TOON Converter to solve a simple but important problem: <strong>data files are often larger than they need to be</strong>.
             </p>
             <p className="text-gray-600 mb-6 text-lg">
               Every time you store or transfer JSON data, images, or other structured information, you're dealing with thousands of redundant characters — repeated keys, excessive whitespace, and unnecessary formatting. For developers making frequent API calls or storing large datasets, this overhead adds up to real costs in bandwidth, storage, and processing time.
@@ -34,7 +37,7 @@ export default function About() {
 
             <h2 className="text-3xl font-bold text-gray-900 mb-6 mt-12">What We Do</h2>
             <p className="text-gray-600 mb-6 text-lg">
-              DataCompress Pro is an advanced compression tool designed to <strong>reduce data size by 40-60%</strong> while maintaining perfect data integrity. Our free, browser-based converter transforms your data into an optimized format that's smaller, faster, and more efficient.
+              JSON TO TOON Converter is an advanced compression tool designed to <strong>reduce data size by 40-60%</strong> while maintaining perfect data integrity. Our free, browser-based converter transforms your data into an optimized format that's smaller, faster, and more efficient.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">

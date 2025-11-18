@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'Contact Us – Support for JSON to TOON Conversion',
   description:
     'Have questions about JSON to TOON conversions or LLM token optimization? Contact our support team for help, feedback, or feature requests.',
+  alternates: {
+    canonical: '/contact',
+  },
 }
 
 export default function Contact() {

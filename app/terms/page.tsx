@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: 'Terms & Conditions – JSON to TOON Conversion Tool',
   description:
     'Review the terms for using our JSON to TOON converter, including allowed usage, data handling policies, and important guidelines for optimized LLM token reduction.',
+  alternates: {
+    canonical: '/terms',
+  },
 }
 
 export default function Terms() {
@@ -26,21 +29,21 @@ export default function Terms() {
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Acceptance of Terms</h2>
               <p className="text-gray-600">
-                By accessing and using DataCompress Pro, you accept and agree to be bound by the terms and provisions of this agreement. If you do not agree to these terms, please do not use our service.
+                By accessing and using JSON TO TOON Converter, you accept and agree to be bound by the terms and provisions of this agreement. If you do not agree to these terms, please do not use our service.
               </p>
             </div>
 
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">2. Description of Service</h2>
               <p className="text-gray-600">
-                DataCompress Pro provides a free, browser-based data compression tool that allows users to compress JSON and structured data. The service is provided "as is" without warranty of any kind.
+                JSON TO TOON Converter provides a free, browser-based data compression tool that allows users to compress JSON and structured data. The service is provided "as is" without warranty of any kind.
               </p>
             </div>
 
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">3. Use of Service</h2>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Permitted Use</h3>
-              <p className="text-gray-600 mb-4">You may use DataCompress Pro for:</p>
+              <p className="text-gray-600 mb-4">You may use JSON TO TOON Converter for:</p>
               <ul className="list-disc pl-6 text-gray-600 space-y-2">
                 <li>Compressing JSON and structured data</li>
                 <li>Personal, educational, or commercial purposes</li>
@@ -60,7 +63,7 @@ export default function Terms() {
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">4. Intellectual Property</h2>
               <p className="text-gray-600">
-                The DataCompress Pro website, including its design, code, and content, is owned by DataCompress Pro and protected by copyright laws. You may not copy, modify, or distribute our website content without explicit permission.
+                The JSON TO TOON Converter website, including its design, code, and content, is owned by JSON TO TOON Converter and protected by copyright laws. You may not copy, modify, or distribute our website content without explicit permission.
               </p>
             </div>
 
@@ -74,7 +77,7 @@ export default function Terms() {
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Disclaimer of Warranties</h2>
               <p className="text-gray-600 mb-4">
-                DataCompress Pro is provided "as is" and "as available" without any warranties, express or implied, including but not limited to:
+                JSON TO TOON Converter is provided "as is" and "as available" without any warranties, express or implied, including but not limited to:
               </p>
               <ul className="list-disc pl-6 text-gray-600 space-y-2">
                 <li>Accuracy or reliability of compression results</li>
@@ -86,7 +89,7 @@ export default function Terms() {
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Limitation of Liability</h2>
               <p className="text-gray-600">
-                In no event shall DataCompress Pro be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, or other intangible losses resulting from:
+                In no event shall JSON TO TOON Converter be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, or other intangible losses resulting from:
               </p>
               <ul className="list-disc pl-6 text-gray-600 space-y-2 mt-4">
                 <li>Your use or inability to use the service</li>

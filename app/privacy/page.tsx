@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: 'Privacy Policy – JSON to TOON Converter',
   description:
     'Read how we protect your data while converting JSON to TOON. No storage, no logs — your JSON stays secure and private throughout the entire process.',
+  alternates: {
+    canonical: '/privacy',
+  },
 }
 
 export default function Privacy() {
@@ -26,7 +29,7 @@ export default function Privacy() {
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Introduction</h2>
               <p className="text-gray-600">
-                At DataCompress Pro, we take your privacy seriously. This Privacy Policy explains how we handle your information when you use our website and services. The short version: we process everything client-side, so your data never leaves your device.
+                At JSON TO TOON Converter, we take your privacy seriously. This Privacy Policy explains how we handle your information when you use our website and services. The short version: we process everything client-side, so your data never leaves your device.
               </p>
             </div>
 
