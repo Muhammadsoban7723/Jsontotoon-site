@@ -1,6 +1,13 @@
+import type { Metadata } from 'next'
 import TOONConverter from '@/components/DataConverter'
 import { FaShieldAlt, FaBolt, FaChartLine, FaLock, FaInfinity, FaSync } from 'react-icons/fa'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'JSON to TOON Converter – Free Tool to Minify JSON for LLMs',
+  description:
+    'Convert JSON into TOON format to reduce LLM token usage. A fast, free and simple JSON to TOON converter for lighter prompts, cheaper API calls, and optimized model input.',
+}
 
 export default function Home() {
   return (

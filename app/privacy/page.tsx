@@ -1,8 +1,9 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy - JSON TO TOON',
-  description: 'Privacy Policy for JSON TO TOON - Learn how we protect your data and privacy.',
+  title: 'Privacy Policy – JSON to TOON Converter',
+  description:
+    'Read how we protect your data while converting JSON to TOON. No storage, no logs — your JSON stays secure and private throughout the entire process.',
 }
 
 export default function Privacy() {

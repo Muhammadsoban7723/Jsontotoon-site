@@ -1,8 +1,9 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Terms & Conditions - JSON TO TOON',
-  description: 'Terms and Conditions for using JSON TO TOON services.',
+  title: 'Terms & Conditions – JSON to TOON Conversion Tool',
+  description:
+    'Review the terms for using our JSON to TOON converter, including allowed usage, data handling policies, and important guidelines for optimized LLM token reduction.',
 }
 
 export default function Terms() {
