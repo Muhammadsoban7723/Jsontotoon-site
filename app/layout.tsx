@@ -35,6 +35,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="NKxXf5xGU+N48wLRNt5C+g"
+          async
+          strategy="beforeInteractive"
+        />
+      </head>
       <body className={inter.className}>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-4PSKX5EG6M"
