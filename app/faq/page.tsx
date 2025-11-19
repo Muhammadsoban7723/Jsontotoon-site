@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import FAQPage from '@/components/FAQPage'
 
 export const metadata: Metadata = {
-  title: 'FAQs – JSON to TOON Converter & LLM Token Reduction Guide',
+  title: 'FAQ | JSON TO TOON Converter Token Reduction Tips Guide',
   description:
-    'Find answers about converting JSON into TOON format, reducing LLM tokens, supported structures, usage tips, and optimizing your JSON for efficient model prompts.',
+    'Browse answers about converting JSON to TOON, reducing tokens, supported data shapes, privacy guarantees, and best practices for writing efficient prompts.',
   alternates: {
     canonical: '/faq',
   },

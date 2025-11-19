@@ -4,9 +4,9 @@ import { FaShieldAlt, FaBolt, FaChartLine, FaLock, FaInfinity, FaSync } from 're
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'JSON to TOON Converter – Free Tool to Minify JSON for LLMs',
+  title: 'JSON TO TOON Converter | Reduce LLM Token Usage by 30-60%',
   description:
-    'Convert JSON into TOON format to reduce LLM token usage. A fast, free and simple JSON to TOON converter for lighter prompts, cheaper API calls, and optimized model input.',
+    'Convert JSON to TOON to shrink LLM prompts by 30-60%. Fast, private, browser-based converter that lowers API costs and keeps every token counted.',
   alternates: {
     canonical: '/',
   },

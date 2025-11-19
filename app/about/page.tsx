@@ -2,9 +2,9 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'About Us – JSON to TOON Converter for Efficient LLM Usage',
+  title: 'About JSON TO TOON Converter | Efficient LLM Usage Guide',
   description:
-    'Learn how our JSON to TOON converter helps reduce LLM token usage by compressing and optimizing JSON structures. Built for developers who want faster, cheaper model outputs.',
+    'Discover how JSON TO TOON Converter helps developers cut tokens, trim API bills, and ship leaner AI workflows with privacy-first tooling and support.',
   alternates: {
     canonical: '/about',
   },

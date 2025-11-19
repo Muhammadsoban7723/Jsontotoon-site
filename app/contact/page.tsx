@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import ContactPage from '@/components/ContactPage'
 
 export const metadata: Metadata = {
-  title: 'Contact Us – Support for JSON to TOON Conversion',
+  title: 'Contact JSON TO TOON Converter | Support & Help Center Team',
   description:
-    'Have questions about JSON to TOON conversions or LLM token optimization? Contact our support team for help, feedback, or feature requests.',
+    'Reach the JSON TO TOON Converter team for support, feature ideas, feedback, or token-optimization questions. We respond quickly to every request.',
   alternates: {
     canonical: '/contact',
   },

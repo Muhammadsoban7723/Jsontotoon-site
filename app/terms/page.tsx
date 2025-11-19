@@ -1,9 +1,9 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Terms & Conditions – JSON to TOON Conversion Tool',
+  title: 'Terms & Conditions | JSON TO TOON Usage Policies & Rights',
   description:
-    'Review the terms for using our JSON to TOON converter, including allowed usage, data handling policies, and important guidelines for optimized LLM token reduction.',
+    'Review the rules for using JSON TO TOON Converter, including acceptable use, data handling expectations, and responsibilities for safe token savings.',
   alternates: {
     canonical: '/terms',
   },
