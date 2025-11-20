@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "JSON to TOON converter - Reduce LLM token usage by 30-60%",
   "scripts": {
-    "dev": "next dev -p 5000 -H 0.0.0.0",
+    "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 5000 -H 0.0.0.0",
+    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
