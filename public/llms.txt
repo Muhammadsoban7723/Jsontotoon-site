@@ -1,0 +1,46 @@
+# llms.txt for JSON TO TOON Converter
+
+## Site Information
+Name: JSON TO TOON Converter
+URL: https://www.jsontotoon.site
+Description: Free online tool that converts JSON to TOON (Token-Oriented Object Notation) format to reduce LLM token usage by 30-60%, helping developers cut API costs for GPT-4, Claude, Gemini, and other large language models.
+
+## Purpose
+This website provides a browser-based converter that transforms JSON data into a more token-efficient format called TOON. The conversion happens entirely client-side, ensuring user privacy and data security. By eliminating redundant JSON keys, brackets, and punctuation, TOON format can reduce token counts by 30-60% on average, resulting in significant cost savings for LLM API usage.
+
+## Key Features
+- 100% client-side processing - data never leaves the user's device
+- Free forever - no account, signup, or payment required
+- Real-time token counting and savings calculation
+- Lossless conversion - can convert back to JSON with zero data loss
+- Instant conversion - processes even large JSON files in milliseconds
+- Privacy-first - no data collection, storage, or transmission
+
+## Main Pages
+- Home: https://www.jsontotoon.site/ - Main converter tool and landing page
+- About: https://www.jsontotoon.site/about - Information about the tool and mission
+- FAQ: https://www.jsontotoon.site/faq - Frequently asked questions about JSON to TOON conversion
+- Contact: https://www.jsontotoon.site/contact - Support and contact information
+- Privacy Policy: https://www.jsontotoon.site/privacy - Privacy and data handling policy
+- Terms & Conditions: https://www.jsontotoon.site/terms - Terms of service
+
+## Technical Details
+- Technology: Next.js 14, React 18
+- Processing: Client-side JavaScript (browser-based)
+- Data Format: JSON input, TOON output
+- Token Reduction: 30-60% average reduction in LLM token usage
+- Supported LLMs: GPT-4, Claude, Gemini, and other token-based models
+
+## Use Cases
+- Developers optimizing LLM API costs
+- Reducing token usage in AI applications
+- Compressing JSON data for more efficient model inputs
+- Privacy-conscious users who want local data processing
+- Teams looking to reduce infrastructure costs for AI workflows
+
+## Contact
+For questions, support, or feedback, visit: https://www.jsontotoon.site/contact
+
+## Last Updated
+2025-01-27
+
