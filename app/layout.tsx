@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  icons: {
+    icon: '/logo-favicon.png',
+  },
   openGraph: {
     title: defaultTitle,
     description: defaultDescription,
@@ -39,8 +42,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.className} bg-white text-gray-900`}>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-4PSKX5EG6M"
           strategy="afterInteractive"
@@ -54,7 +57,7 @@ export default function RootLayout({
           `}
         </Script>
         <Header />
-        <main className="min-h-screen">
+        <main className="min-h-screen bg-white">
           {children}
         </main>
         <Footer />

@@ -2,62 +2,89 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { FaBars, FaTimes } from 'react-icons/fa'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   const navLinks = [
     { href: '/', label: 'Home' },
+    { href: '/how-it-works', label: 'How It Works' },
+    { href: '/blog', label: 'Blog' },
     { href: '/about', label: 'About' },
-    { href: '/faq', label: 'FAQ' },
     { href: '/contact', label: 'Contact' },
   ]
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md">
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold text-primary-600">
-            JSON<span className="text-primary-500">TO</span>TOON
-          </Link>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-lg border-b border-gray-200">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-start px-4">
+        <Link
+          href="/"
+          className="flex items-center gap-2 text-xl font-extrabold tracking-wide text-slate-900"
+        >
+          <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-blue-600 text-xs font-bold text-white shadow-sm">
+            {'{'}⇄{'}'}
+          </span>
+          <span className="text-base font-semibold tracking-tight">JSON to TOON</span>
+        </Link>
 
-          <nav className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
-              >
-                {link.label}
-              </Link>
-            ))}
+        <div className="ml-auto flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-4 text-base font-medium text-slate-700">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={
+                    isActive
+                      ? 'rounded-full bg-blue-50 px-3 py-1 text-blue-600'
+                      : 'px-3 py-1 text-slate-700 hover:text-blue-600'
+                  }
+                >
+                  {link.label}
+                </Link>
+              )
+            })}
           </nav>
 
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-gray-700 hover:text-primary-600"
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-          </button>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden text-slate-700 hover:text-blue-600"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
+            </button>
+          </div>
         </div>
-
-        {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t pt-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="block py-2 text-gray-700 hover:text-primary-600 transition-colors font-medium"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-        )}
       </div>
+
+      {isMenuOpen && (
+        <nav className="md:hidden border-t border-gray-200 bg-white px-4 py-3 text-sm">
+          <div className="mx-auto flex max-w-6xl flex-col gap-1">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={
+                    isActive
+                      ? 'rounded-full bg-blue-50 px-3 py-2 text-blue-600'
+                      : 'px-3 py-2 text-slate-700 hover:text-blue-600'
+                  }
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              )
+            })}
+          </div>
+        </nav>
+      )}
     </header>
   )
 }

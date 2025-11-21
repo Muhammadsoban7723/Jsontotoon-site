@@ -1,14 +1,40 @@
-export function jsonToTOON(jsonString: string): string {
+export type TOONIndentation = 0 | 2 | 4
+export type TOONDelimiter = ',' | '\t' | '|'
+export type TOONKeyFolding = 'disabled' | 'safe'
+
+export type TOONOptions = {
+  indentation?: TOONIndentation
+  delimiter?: TOONDelimiter
+  keyFolding?: TOONKeyFolding
+  allowDuplicates?: boolean
+}
+
+const DEFAULT_OPTIONS: Required<Omit<TOONOptions, 'allowDuplicates'>> = {
+  indentation: 2,
+  delimiter: ',',
+  keyFolding: 'disabled',
+}
+
+export function jsonToTOON(jsonString: string, options: TOONOptions = {}): string {
   try {
     const data = JSON.parse(jsonString)
-    return encodeToTOON(data, 0)
+    const merged: Required<Omit<TOONOptions, 'allowDuplicates'>> = {
+      ...DEFAULT_OPTIONS,
+      indentation: options.indentation ?? DEFAULT_OPTIONS.indentation,
+      delimiter: options.delimiter ?? DEFAULT_OPTIONS.delimiter,
+      keyFolding: options.keyFolding ?? DEFAULT_OPTIONS.keyFolding,
+    }
+    return encodeToTOON(data, 0, merged)
   } catch (error) {
     throw new Error('Invalid JSON format. Please check your input.')
   }
 }
 
-function encodeToTOON(data: any, indent: number = 0): string {
-  const indentStr = '  '.repeat(indent)
+type InternalTOONOptions = typeof DEFAULT_OPTIONS
+
+function encodeToTOON(data: any, indent: number = 0, options: InternalTOONOptions): string {
+  const indentUnit = ' '.repeat(options.indentation)
+  const indentStr = indentUnit.repeat(indent)
   
   if (data === null) {
     return 'null'
@@ -36,27 +62,31 @@ function encodeToTOON(data: any, indent: number = 0): string {
     }
     
     if (isUniformArrayOfObjects(data)) {
-      return encodeArrayOfObjects(data, indent)
+      return encodeArrayOfObjects(data, indent, options)
     }
     
     if (isPrimitiveArray(data)) {
-      const values = data.map(item => formatValue(item)).join(', ')
+      const separator = options.delimiter === ',' ? ', ' : options.delimiter
+      const values = data.map(item => formatValue(item)).join(separator)
       return `[${data.length}]: ${values}`
     }
     
-    const items = data.map(item => encodeToTOON(item, indent + 1))
+    const items = data.map(item => encodeToTOON(item, indent + 1, options))
     return '[\n' + items.map(item => indentStr + '  ' + item).join(',\n') + '\n' + indentStr + ']'
   }
   
   if (typeof data === 'object') {
-    const entries = Object.entries(data)
+    let entries = Object.entries(data)
     if (entries.length === 0) {
       return '{}'
+    }
+    if (options.keyFolding === 'safe') {
+      entries = foldEntriesSafe(entries)
     }
     
     const lines: string[] = []
     for (const [key, value] of entries) {
-      const encodedValue = encodeToTOON(value, indent + 1)
+      const encodedValue = encodeToTOON(value, indent + 1, options)
       
       if (typeof value === 'object' && value !== null && !Array.isArray(value) && Object.keys(value).length > 0) {
         lines.push(`${indentStr}${key}:`)
@@ -74,17 +104,44 @@ function encodeToTOON(data: any, indent: number = 0): string {
   return String(data)
 }
 
-function encodeArrayOfObjects(arr: any[], indent: number = 0): string {
+function foldEntriesSafe(entries: [string, any][]): [string, any][] {
+  const result: [string, any][] = []
+
+  for (const [key, value] of entries) {
+    let currentKey = key
+    let currentValue = value
+
+    while (
+      currentValue &&
+      typeof currentValue === 'object' &&
+      !Array.isArray(currentValue)
+    ) {
+      const innerKeys = Object.keys(currentValue)
+      if (innerKeys.length !== 1) break
+
+      const innerKey = innerKeys[0]
+      currentKey = `${currentKey}.${innerKey}`
+      currentValue = (currentValue as any)[innerKey]
+    }
+
+    result.push([currentKey, currentValue])
+  }
+
+  return result
+}
+
+function encodeArrayOfObjects(arr: any[], indent: number = 0, options: InternalTOONOptions): string {
   if (arr.length === 0) return '[]'
   
-  const indentStr = '  '.repeat(indent)
+  const indentUnit = ' '.repeat(options.indentation)
+  const indentStr = indentUnit.repeat(indent)
   const keys = Object.keys(arr[0])
-  const keysStr = keys.join(',')
+  const keysStr = keys.join(options.delimiter)
   
   const header = `[${arr.length}]{${keysStr}}:`
   
   const rows = arr.map(obj => {
-    return keys.map(key => formatValue(obj[key])).join(',')
+    return keys.map(key => formatValue(obj[key])).join(options.delimiter)
   })
   
   return header + '\n' + rows.map(row => indentStr + '  ' + row).join('\n')

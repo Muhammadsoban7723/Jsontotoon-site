@@ -14,14 +14,17 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
-      <section className="bg-gradient-to-b from-primary-50 to-white py-16 md:py-24">
+    <div className="min-h-screen bg-white">
+      <section className="bg-white py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
-          <div className="mb-4 inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold">
-            100% Client-Side Processing — Your data never leaves your device
+          <div className="mb-4 inline-flex items-center justify-center gap-2 rounded-full bg-primary-50 px-4 py-2 text-sm font-semibold text-primary-700">
+            <FaLock className="text-primary-500" size={14} />
+            <span className="gradient-text-strong">
+              100% Client-Side Processing — Your data never leaves your device
+            </span>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            Convert JSON to TOON and Save <span className="text-primary-600">30-60%</span> Tokens
+          <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">
+            JSON to TOON Converter
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Transform JSON to Token-Oriented Object Notation (TOON) format instantly. Reduce LLM token usage, cut API costs for GPT-4, Claude, and Gemini — no signup required.
@@ -29,13 +32,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-12 bg-white">
+      <section className="py-2 bg-white">
         <div className="container mx-auto px-4">
           <TOONConverter />
         </div>
       </section>
 
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -172,7 +175,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
