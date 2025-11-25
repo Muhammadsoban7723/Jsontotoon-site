@@ -28,7 +28,9 @@ export default function TOONConverter() {
   const [allowDuplicates, setAllowDuplicates] = useState(false)
   const [showAdvanced, setShowAdvanced] = useState(false)
   const [showHistory, setShowHistory] = useState(false)
+  const [isHistoryOpen, setIsHistoryOpen] = useState(false)
   const [history, setHistory] = useState<HistoryEntry[]>([])
+  const [historyPage, setHistoryPage] = useState(0)
 
   useEffect(() => {
     setInputTokens(countTokens(input))
@@ -122,18 +124,58 @@ export default function TOONConverter() {
     setError('')
   }
 
+  const openHistory = () => {
+    setShowHistory(true)
+    requestAnimationFrame(() => {
+      setIsHistoryOpen(true)
+    })
+  }
+
+  const closeHistory = () => {
+    setIsHistoryOpen(false)
+  }
+
+  useEffect(() => {
+    if (!isHistoryOpen && showHistory) {
+      const timeout = setTimeout(() => {
+        setShowHistory(false)
+      }, 300)
+
+      return () => clearTimeout(timeout)
+    }
+  }, [isHistoryOpen, showHistory])
+
   const handleLoadHistory = (entry: HistoryEntry) => {
     setInput(entry.input)
     setOutput(entry.output)
-    setShowHistory(false)
+    closeHistory()
   }
 
   const handleClearHistory = () => {
     setHistory([])
+    setHistoryPage(0)
   }
 
   const handleRemoveHistory = (id: number) => {
     setHistory((prev) => prev.filter((item) => item.id !== id))
+  }
+
+  const HISTORY_PAGE_SIZE = 5
+  const totalHistoryPages = Math.max(1, Math.ceil(history.length / HISTORY_PAGE_SIZE))
+  const currentHistoryPage = Math.min(historyPage, totalHistoryPages - 1)
+  const paginatedHistory = history.slice(
+    currentHistoryPage * HISTORY_PAGE_SIZE,
+    (currentHistoryPage + 1) * HISTORY_PAGE_SIZE
+  )
+
+  const handleHistoryPrev = () => {
+    setHistoryPage((prev) => Math.max(0, prev - 1))
+  }
+
+  const handleHistoryNext = () => {
+    setHistoryPage((prev) =>
+      Math.min(totalHistoryPages - 1, prev + 1)
+    )
   }
 
   const reduction = calculateReduction(inputTokens, outputTokens)
@@ -171,7 +213,7 @@ export default function TOONConverter() {
 
           <button
             type="button"
-            onClick={() => setShowHistory((prev) => !prev)}
+            onClick={openHistory}
             className="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-3 py-2 font-medium text-gray-700 hover:bg-gray-50 transition-colors"
           >
             <span>History</span>
@@ -384,13 +426,19 @@ export default function TOONConverter() {
       </div>
       {/* History drawer */}
       {showHistory && (
-        <div className="fixed inset-0 z-40 flex justify-end">
+        <div className="fixed inset-0 z-[60] flex justify-end">
           <div
-            className="absolute inset-0 bg-black/20"
-            onClick={() => setShowHistory(false)}
+            className={`absolute inset-0 bg-black/25 backdrop-blur-sm transition-opacity duration-300 ${
+              isHistoryOpen ? 'opacity-100' : 'opacity-0'
+            }`}
+            onClick={closeHistory}
           />
-          <div className="relative z-50 flex h-full w-full max-w-md flex-col border-l border-gray-200 bg-white shadow-xl transform transition-transform duration-300 translate-x-0">
-            <div className="flex items-center justify-between border-b border-gray-200 px-4 py-3">
+          <div
+            className={`relative z-[70] flex h-full w-full max-w-md flex-col border-l border-gray-200 bg-white shadow-xl transform transition-transform duration-300 ease-out ${
+              isHistoryOpen ? 'translate-x-0' : 'translate-x-full'
+            }`}
+          >
+            <div className="sticky top-0 z-10 flex items-center justify-between border-b border-gray-200 bg-white/80 px-4 py-3 backdrop-blur-sm">
               <div className="flex items-center gap-2">
                 <FaRegClock className="h-4 w-4 text-gray-700" />
                 <span className="text-sm font-semibold text-gray-800">
@@ -404,14 +452,15 @@ export default function TOONConverter() {
               </div>
               <button
                 type="button"
-                className="text-sm text-gray-500 hover:text-gray-800"
-                onClick={() => setShowHistory(false)}
+                aria-label="Close history"
+                className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-sm font-semibold text-gray-600 shadow-sm hover:bg-gray-200 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                onClick={closeHistory}
               >
                 ✕
               </button>
             </div>
 
-            <div className="border-b border-gray-200 px-4 py-2">
+            <div className="border-b border-gray-200 px-4 py-3 mt-1 sm:mt-2">
               <button
                 type="button"
                 className="w-full rounded-lg bg-red-50 px-3 py-2 text-xs font-semibold text-red-600 hover:bg-red-100 disabled:cursor-not-allowed disabled:opacity-50"
@@ -429,7 +478,7 @@ export default function TOONConverter() {
                 </p>
               )}
 
-              {history.map((entry) => (
+              {paginatedHistory.map((entry) => (
                 <div
                   key={entry.id}
                   className="space-y-2 rounded-xl border border-gray-200 bg-white p-3 shadow-sm"
@@ -437,7 +486,7 @@ export default function TOONConverter() {
                   <div className="flex items-center justify-between gap-2">
                     <div className="flex items-center gap-2">
                       <span className="inline-flex items-center rounded-full bg-primary-50 px-2 py-0.5 text-[11px] font-semibold text-primary-700">
-                        JSON → TOON
+                        JSON  TOON
                       </span>
                       <span className="inline-flex items-center rounded-full bg-green-50 px-2 py-0.5 text-[11px] font-semibold text-green-700">
                         {entry.reduction}%
@@ -479,6 +528,27 @@ export default function TOONConverter() {
                   </div>
                 </div>
               ))}
+            </div>
+            <div className="border-t border-gray-200 px-4 py-3 text-xs text-gray-600 flex items-center justify-between bg-white/80 backdrop-blur-sm">
+              <button
+                type="button"
+                onClick={handleHistoryPrev}
+                disabled={currentHistoryPage === 0 || history.length === 0}
+                className="inline-flex items-center rounded-lg border border-gray-300 bg-white px-3 py-1 font-medium hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                Previous
+              </button>
+              <div className="text-[11px] font-medium text-gray-500">
+                Page {currentHistoryPage + 1} of {totalHistoryPages}
+              </div>
+              <button
+                type="button"
+                onClick={handleHistoryNext}
+                disabled={currentHistoryPage >= totalHistoryPages - 1 || history.length === 0}
+                className="inline-flex items-center rounded-lg border border-gray-300 bg-white px-3 py-1 font-medium hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                Next
+              </button>
             </div>
           </div>
         </div>
