@@ -238,6 +238,157 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              From the JSON TO TOON Blog
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Learn practical strategies to cut LLM token usage, lower costs, and design TOON-optimized prompts.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+            <article className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6 flex flex-col justify-between">
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  Cutting GPT-4 Costs with TOON
+                </h3>
+                <p className="text-gray-600 mb-4 text-sm">
+                  A step-by-step guide showing how TOON can shrink real production prompts and reduce monthly API bills.
+                </p>
+              </div>
+              <Link
+                href="/blog/cutting-gpt4-costs-with-toon"
+                className="text-primary-600 font-semibold text-sm hover:text-primary-700"
+              >
+                Read more →
+              </Link>
+            </article>
+
+            <article className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6 flex flex-col justify-between">
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  Designing TOON-Friendly JSON Schemas
+                </h3>
+                <p className="text-gray-600 mb-4 text-sm">
+                  Tips for structuring your JSON so it converts cleanly to TOON while staying readable for humans.
+                </p>
+              </div>
+              <Link
+                href="/blog/designing-toon-friendly-json-schemas"
+                className="text-primary-600 font-semibold text-sm hover:text-primary-700"
+              >
+                Read more →
+              </Link>
+            </article>
+
+            <article className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6 flex flex-col justify-between">
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  TOON in Real-World LLM Pipelines
+                </h3>
+                <p className="text-gray-600 mb-4 text-sm">
+                  How teams integrate TOON into retrieval, agents, and long-context workflows.
+                </p>
+              </div>
+              <Link
+                href="/blog/toon-in-real-world-llm-pipelines"
+                className="text-primary-600 font-semibold text-sm hover:text-primary-700"
+              >
+                Read more →
+              </Link>
+            </article>
+          </div>
+
+          <div className="text-center">
+            <Link
+              href="/blog"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-lg bg-primary-600 text-white font-semibold hover:bg-primary-700 transition-colors"
+            >
+              View all blog posts
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Quick answers to common questions about JSON TO TOON and token savings.
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-4 text-left">
+            <details className="group rounded-xl border border-gray-200 bg-white px-4 py-3">
+              <summary className="flex cursor-pointer items-center justify-between gap-4 list-none">
+                <span className="text-base font-semibold text-gray-900">
+                  Is my JSON data ever sent to a server?
+                </span>
+                <span className="text-xl font-bold text-primary-600 group-open:hidden">+</span>
+                <span className="hidden text-xl font-bold text-primary-600 group-open:inline">−</span>
+              </summary>
+              <div className="mt-2 text-sm text-gray-600">
+                No. All conversion runs entirely in your browser. Your JSON never leaves your device and is not stored on any server.
+              </div>
+            </details>
+
+            <details className="group rounded-xl border border-gray-200 bg-white px-4 py-3">
+              <summary className="flex cursor-pointer items-center justify-between gap-4 list-none">
+                <span className="text-base font-semibold text-gray-900">
+                  How much can I actually save on tokens?
+                </span>
+                <span className="text-xl font-bold text-primary-600 group-open:hidden">+</span>
+                <span className="hidden text-xl font-bold text-primary-600 group-open:inline">−</span>
+              </summary>
+              <div className="mt-2 text-sm text-gray-600">
+                In our tests, TOON often reduces token usage by 30–60% compared to raw JSON, depending on how repetitive your data is.
+              </div>
+            </details>
+
+            <details className="group rounded-xl border border-gray-200 bg-white px-4 py-3">
+              <summary className="flex cursor-pointer items-center justify-between gap-4 list-none">
+                <span className="text-base font-semibold text-gray-900">
+                  Can I convert TOON back to JSON?
+                </span>
+                <span className="text-xl font-bold text-primary-600 group-open:hidden">+</span>
+                <span className="hidden text-xl font-bold text-primary-600 group-open:inline">−</span>
+              </summary>
+              <div className="mt-2 text-sm text-gray-600">
+                Yes. TOON is designed to be lossless. You can safely convert from JSON to TOON and back to JSON without losing information.
+              </div>
+            </details>
+
+            <details className="group rounded-xl border border-gray-200 bg-white px-4 py-3">
+              <summary className="flex cursor-pointer items-center justify-between gap-4 list-none">
+                <span className="text-base font-semibold text-gray-900">
+                  Does JSON TO TOON work with GPT-4, Claude, and Gemini?
+                </span>
+                <span className="text-xl font-bold text-primary-600 group-open:hidden">+</span>
+                <span className="hidden text-xl font-bold text-primary-600 group-open:inline">−</span>
+              </summary>
+              <div className="mt-2 text-sm text-gray-600">
+                Yes. TOON is just text, so it works with any LLM API. You can paste it directly into prompts for GPT-4, Claude, Gemini, and others.
+              </div>
+            </details>
+          </div>
+
+          <div className="text-center mt-10">
+            <Link
+              href="/faq"
+              className="inline-flex items-center justify-center px-8 py-3 rounded-lg bg-primary-600 text-white font-semibold hover:bg-primary-700 transition-colors"
+            >
+              View all FAQs
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 bg-primary-600">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
