@@ -7,6 +7,8 @@ import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
+const siteName = 'JSON to TOON'
+
 const defaultTitle =
   'JSON TO TOON Converter | Reduce LLM Token Usage by 30-60%'
 const defaultDescription =
@@ -17,6 +19,7 @@ export const metadata: Metadata = {
   title: defaultTitle,
   description: defaultDescription,
   keywords: 'JSON to TOON, TOON format, token reduction, LLM optimization, GPT token savings, Claude API costs',
+  applicationName: siteName,
   alternates: {
     canonical: '/',
   },
@@ -28,6 +31,8 @@ export const metadata: Metadata = {
     description: defaultDescription,
     type: 'website',
     locale: 'en_US',
+    siteName,
+    url: 'https://www.jsontotoon.site/',
   },
   twitter: {
     card: 'summary_large_image',
@@ -44,6 +49,32 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} bg-white text-gray-900`}>
+        <Script id="structured-data" type="application/ld+json" strategy="beforeInteractive">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              {
+                '@type': 'Organization',
+                '@id': 'https://www.jsontotoon.site/#organization',
+                name: siteName,
+                url: 'https://www.jsontotoon.site/',
+                logo: {
+                  '@type': 'ImageObject',
+                  url: 'https://www.jsontotoon.site/logo-favicon.png',
+                },
+              },
+              {
+                '@type': 'WebSite',
+                '@id': 'https://www.jsontotoon.site/#website',
+                name: siteName,
+                url: 'https://www.jsontotoon.site/',
+                publisher: {
+                  '@id': 'https://www.jsontotoon.site/#organization',
+                },
+              },
+            ],
+          })}
+        </Script>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-4PSKX5EG6M"
           strategy="afterInteractive"
