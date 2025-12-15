@@ -87,6 +87,19 @@ export default function RootLayout({
             gtag('config', 'G-4PSKX5EG6M');
           `}
         </Script>
+        <Script id="tawk-to" strategy="afterInteractive">
+          {`
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+              var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+              s1.async=true;
+              s1.src='https://embed.tawk.to/693fc86c18f23b1985eda50e/1jcgidq53';
+              s1.charset='UTF-8';
+              s1.setAttribute('crossorigin','*');
+              s0.parentNode.insertBefore(s1,s0);
+            })();
+          `}
+        </Script>
         <Header />
         <main className="min-h-screen bg-white">
           {children}
