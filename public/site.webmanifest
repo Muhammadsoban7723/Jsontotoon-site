@@ -1,0 +1,43 @@
+{
+    "name": "JSON to TOON Converter Online",
+    "short_name": "JSON to TOON",
+    "description": "Free online JSON to TOON converter - reduce LLM token usage by 30-60%",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#0066FF",
+    "icons": [
+        {
+            "src": "/favicon.png",
+            "sizes": "any",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/favicon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": [
+        "productivity",
+        "utilities",
+        "development"
+    ],
+    "screenshots": [],
+    "shortcuts": [
+        {
+            "name": "Convert JSON to TOON",
+            "short_name": "Convert",
+            "description": "Start converting JSON to TOON format",
+            "url": "/",
+            "icons": [
+                {
+                    "src": "/favicon-512.png",
+                    "sizes": "512x512"
+                }
+            ]
+        }
+    ]
+}

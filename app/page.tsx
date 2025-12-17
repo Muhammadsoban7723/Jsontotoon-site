@@ -4,11 +4,18 @@ import { FaShieldAlt, FaBolt, FaChartLine, FaLock, FaInfinity, FaSync } from 're
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'JSON TO TOON Converter | Reduce LLM Token Usage by 30-60%',
+  title: 'JSON to TOON Converter Online - Free TOON Format Tool | jsontotoon',
   description:
-    'Convert JSON to TOON to shrink LLM prompts by 30-60%. Fast, private, browser-based converter that lowers API costs and keeps every token counted.',
+    'Convert JSON to TOON online for free! Best JSON to TOON converter - reduce LLM token usage 30-60%. Fast jsontotoon converter for GPT-4, Claude & Gemini. No signup, 100% private, instant results.',
   alternates: {
-    canonical: '/',
+    canonical: 'https://www.jsontotoon.site/',
+  },
+  openGraph: {
+    title: 'JSON to TOON Converter Online - Free TOON Format Tool',
+    description: 'Convert JSON to TOON online for free! Reduce LLM token usage by 30-60%. Best jsontotoon converter for GPT-4, Claude & Gemini.',
+    url: 'https://www.jsontotoon.site/',
+    type: 'website',
+    images: ['/og-image.png'],
   },
 }
 
@@ -20,14 +27,15 @@ export default function Home() {
           <div className="mb-4 inline-flex items-center justify-center gap-2 rounded-full bg-primary-50 px-4 py-2 text-sm font-semibold text-primary-700">
             <FaLock className="text-primary-500" size={14} />
             <span className="gradient-text-strong">
-              100% Client-Side Processing — Your data never leaves your device
+              100% Free • No Signup • Your data never leaves your browser
             </span>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">
-            JSON to TOON Converter
+            JSON to TOON Converter Online
+            <span className="block text-3xl md:text-4xl mt-2 text-primary-600">Free jsontotoon Tool</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Transform JSON to Token-Oriented Object Notation (TOON) format instantly. Reduce LLM token usage, cut API costs for GPT-4, Claude, and Gemini — no signup required.
+            Convert JSON to TOON format instantly with the best free json to toon converter online. Reduce LLM token usage by 30-60% for GPT-4, Claude, and Gemini. Our json toon converter processes everything in your browser — no signup required, completely private.
           </p>
         </div>
       </section>
@@ -35,6 +43,37 @@ export default function Home() {
       <section className="py-2 bg-white">
         <div className="container mx-auto px-4">
           <TOONConverter />
+        </div>
+      </section>
+
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              Why Choose Our JSON to TOON Converter Online?
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <div className="text-3xl font-bold text-primary-600 mb-1">100%</div>
+                <div className="text-sm text-gray-700">Free Forever</div>
+              </div>
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <div className="text-3xl font-bold text-primary-600 mb-1">30-60%</div>
+                <div className="text-sm text-gray-700">Token Savings</div>
+              </div>
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <div className="text-3xl font-bold text-primary-600 mb-1">0MB</div>
+                <div className="text-sm text-gray-700">Data Sent</div>
+              </div>
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <div className="text-3xl font-bold text-primary-600 mb-1">∞</div>
+                <div className="text-sm text-gray-700">Unlimited Use</div>
+              </div>
+            </div>
+            <p className="text-base text-gray-600 mt-6 max-w-3xl mx-auto">
+              Our <strong>jsontotoon converter</strong> is the most trusted <strong>json to toon converter online</strong> for developers using GPT-4, Claude, and Gemini. Convert JSON to TOON format in seconds with our fast, secure, and completely free <strong>json toon converter</strong>. No downloads, no registration — just instant token optimization.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -357,7 +396,7 @@ export default function Home() {
                 A product analytics team sends user events to GPT‑4 to summarize behavior:
               </p>
               <pre className="bg-gray-900 text-gray-100 text-xs rounded-lg p-4 overflow-x-auto flex-1">
-{`You are a data analyst. Summarize the following events.
+                {`You are a data analyst. Summarize the following events.
 
 {
   "events": [
@@ -377,7 +416,7 @@ export default function Home() {
                 The same data encoded as TOON, using a compact tabular layout:
               </p>
               <pre className="bg-gray-900 text-gray-100 text-xs rounded-lg p-4 overflow-x-auto flex-1">
-{`You are a data analyst. Summarize the following events.
+                {`You are a data analyst. Summarize the following events.
 
 events[4]{userId,event,page,timestamp}:
   1,view,pricing,2024-08-01T10:01:00Z
@@ -470,7 +509,7 @@ events[4]{userId,event,page,timestamp}:
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Traditional JSON</h3>
                 <p className="text-sm text-gray-600 mb-4">Repetitive keys, excessive punctuation</p>
                 <pre className="bg-white p-4 rounded-lg text-sm overflow-x-auto">
-{`{
+                  {`{
   "users": [
     {"id": 1, "name": "Alice"},
     {"id": 2, "name": "Bob"},
@@ -485,7 +524,7 @@ events[4]{userId,event,page,timestamp}:
                 <h3 className="text-xl font-bold text-gray-900 mb-3">TOON Format</h3>
                 <p className="text-sm text-gray-600 mb-4">Compact, token-optimized</p>
                 <pre className="bg-white p-4 rounded-lg text-sm overflow-x-auto">
-{`users[3]{id,name}:
+                  {`users[3]{id,name}:
   1,Alice
   2,Bob
   3,Carol`}
@@ -1057,6 +1096,141 @@ events[4]{userId,event,page,timestamp}:
           </h2>
           <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
             Join thousands of developers optimizing their AI workflows with TOON format. Start converting now — it's completely free.
+          </p>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <a
+              href="#"
+              className="px-8 py-4 bg-white text-primary-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+            >
+              Try Converter Now
+            </a>
+            <Link
+              href="/about"
+              className="px-8 py-4 bg-primary-700 text-white rounded-lg font-semibold hover:bg-primary-800 transition-colors"
+            >
+              Learn More About TOON
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-gradient-to-br from-gray-50 to-primary-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                The Complete Guide to JSON to TOON Conversion
+              </h2>
+              <p className="text-xl text-gray-600">
+                Everything you need to know about using our free jsontotoon converter
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <div className="bg-white rounded-xl p-6 shadow-md">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  📌 What is a JSON to TOON Converter?
+                </h3>
+                <p className="text-gray-700 mb-3">
+                  A <strong>JSON to TOON converter</strong> (also known as <strong>jsontotoon</strong> tool) transforms standard JSON data into Token-Oriented Object Notation (TOON) format. Our <strong>json to toon converter online</strong> processes your data instantly in your browser without any server uploads.
+                </p>
+                <p className="text-gray-700">
+                  Unlike other converters, our <strong>json toon converter</strong> is 100% free, requires no signup, and offers unlimited conversions for developers working with GPT-4, Claude, Gemini, and other LLMs.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-xl p-6 shadow-md">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  🚀 Benefits of Using JSON to TOON Online
+                </h3>
+                <ul className="space-y-2 text-gray-700">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary-600 font-bold">✓</span>
+                    <span><strong>Instant Conversion:</strong> Our jsontotoon converter processes JSON in milliseconds</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary-600 font-bold">✓</span>
+                    <span><strong>30-60% Token Reduction:</strong> Dramatically lower your LLM API costs</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary-600 font-bold">✓</span>
+                    <span><strong>100% Private:</strong> All json to toon conversion happens client-side</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary-600 font-bold">✓</span>
+                    <span><strong>Free Forever:</strong> No hidden costs, premium tiers, or usage limits</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-white rounded-xl p-6 shadow-md">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  💡 When to Use JSON to TOON Converter
+                </h3>
+                <p className="text-gray-700 mb-3">
+                  Use our <strong>json to toon converter online</strong> when you're:
+                </p>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li>• Sending large JSON payloads to GPT-4, Claude, or Gemini</li>
+                  <li>• Building AI agents that process structured data</li>
+                  <li>• Working with repetitive JSON arrays and objects</li>
+                  <li>• Optimizing RAG (Retrieval-Augmented Generation) systems</li>
+                  <li>• Reducing LLM API costs on high-volume workloads</li>
+                  <li>• Processing analytics data through language models</li>
+                </ul>
+              </div>
+
+              <div className="bg-white rounded-xl p-6 shadow-md">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  🎯 Why Developers Trust Our jsontotoon Tool
+                </h3>
+                <p className="text-gray-700 mb-3">
+                  The best <strong>json toon converter</strong> available today because:
+                </p>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li>• <strong>No Installation:</strong> Works directly in your browser</li>
+                  <li>• <strong>Zero Data Collection:</strong> We never see or store your JSON</li>
+                  <li>• <strong>Real-time Token Counting:</strong> See exact savings instantly</li>
+                  <li>• <strong>One-Click Copy:</strong> Copy TOON output with a single click</li>
+                  <li>• <strong>Works Offline:</strong> Convert even without internet connection</li>
+                  <li>• <strong>Mobile-Friendly:</strong> Use on any device, anywhere</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl p-8 shadow-lg border-2 border-primary-200">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
+                🏆 Most Popular Free JSON to TOON Converter Online
+              </h3>
+              <p className="text-gray-700 text-center max-w-3xl mx-auto mb-6">
+                Join thousands of developers who use our <strong>json to toon converter</strong> daily to optimize their LLM workflows. Whether you call it <strong>jsontotoon</strong>, <strong>json toon</strong>, or <strong>jsontoon</strong> — this is the fastest, most reliable <strong>json to toon converter online</strong> available. Start converting now and see the difference in your token usage immediately.
+              </p>
+              <div className="flex justify-center gap-4 flex-wrap">
+                <div className="bg-primary-50 px-6 py-3 rounded-lg">
+                  <div className="text-sm text-gray-600">Available 24/7</div>
+                  <div className="text-lg font-bold text-primary-600">Free Forever</div>
+                </div>
+                <div className="bg-primary-50 px-6 py-3 rounded-lg">
+                  <div className="text-sm text-gray-600">Processing Speed</div>
+                  <div className="text-lg font-bold text-primary-600">Instant</div>
+                </div>
+                <div className="bg-primary-50 px-6 py-3 rounded-lg">
+                  <div className="text-sm text-gray-600">Privacy Level</div>
+                  <div className="text-lg font-bold text-primary-600">100% Secure</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-gradient-to-r from-primary-600 to-primary-800 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Start Converting JSON to TOON Today
+          </h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+            Join thousands of developers saving 30-60% on LLM tokens. Free forever, no signup required.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a
